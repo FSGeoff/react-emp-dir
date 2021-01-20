@@ -42,7 +42,7 @@ class Directory extends Component {
 		const headerStyle = {
 			fontSize: "40px",
 			fontFamily: "Georgia, serif",
-			fontColor: "#295679",
+			fontColor: "#EBF2F8",
 			textAlign: "center",
 			fontWeight: "bolder",
 			margin: "8px",
@@ -52,48 +52,50 @@ class Directory extends Component {
 
 		return (
 			<>
-				<nav
-					className="navbar is-black"
-					role="navigation"
-					aria-label="main navigation"
-				>
-					<div className="navbar-brand">
-						<img
-							src="https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-employee-icon-design-template-vector-isolated-png-image_856368.jpg"
-							style={{ height: "125px", width: "125px" }}
-							alt="employee icon"
-						/>
-					</div>
+				<body style={{ backgroundColor: "#052E52" }}>
+					<nav
+						className="navbar is-black"
+						role="navigation"
+						aria-label="main navigation"
+					>
+						<div className="navbar-brand">
+							<img
+								src="https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-employee-icon-design-template-vector-isolated-png-image_856368.jpg"
+								style={{ height: "125px", width: "125px" }}
+								alt="employee icon"
+							/>
+						</div>
 
-					<div id="navbarBasicExample" className="navbar-menu">
-						<div className="navbar-start">
-							<a className="navbar-item">Search</a>
+						<div id="navbarBasicExample" className="navbar-menu">
+							<div className="navbar-start">
+								<a className="navbar-item">Search</a>
 
-							<a className="navbar-item">Directory</a>
+								<a className="navbar-item">Directory</a>
+							</div>
+						</div>
+					</nav>
+					<header>
+						<h1 style={headerStyle}>EMPLOYEE DIRECTORY</h1>
+					</header>
+
+					<div className="columns">
+						<div className="column is-3" style={boxStyle}>
+							<figure class="image is-128x128 is-centered">
+								<img
+									className="is-rounded"
+									src="https://bulma.io/images/placeholders/128x128.png"
+								/>
+							</figure>
+							<p1>Name:</p1>
+							<br />
+							<p1>Location:</p1>
+							<br />
+							<p1>Email:</p1>
+							<br />
+							<p1>Username:</p1>
 						</div>
 					</div>
-				</nav>
-				<header>
-					<h1 style={headerStyle}>EMPLOYEE DIRECTORY</h1>
-				</header>
-
-				<div className="columns">
-					<div className="column is-3" style={boxStyle}>
-						<figure class="image is-128x128 is-centered">
-							<img
-								className="is-rounded"
-								src="https://bulma.io/images/placeholders/128x128.png"
-							/>
-						</figure>
-						<p1>Name:</p1>
-						<br />
-						<p1>Location:</p1>
-						<br />
-						<p1>Email:</p1>
-						<br />
-						<p1>Username:</p1>
-					</div>
-				</div>
+				</body>
 			</>
 		);
 	}
