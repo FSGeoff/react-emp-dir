@@ -6,17 +6,17 @@ class Directory extends Component {
 		axios
 			.get("https://randomuser.me/api/")
 			.then((response) => {
-				const empArr = response.data.results;
+				const employeeArr = response.data.results;
 
-				console.log(empArr[0].gender);
-				console.log(empArr[0].name.title);
-				console.log(empArr[0].name.first);
-				console.log(empArr[0].name.last);
-				console.log(empArr[0].location.country);
-				console.log(empArr[0].email);
-				console.log(empArr[0].login.username);
-				console.log(empArr[0].login.password);
-				console.log(empArr[0].picture.medium);
+				console.log(employeeArr[0].gender);
+				console.log(employeeArr[0].name.title);
+				console.log(employeeArr[0].name.first);
+				console.log(employeeArr[0].name.last);
+				console.log(employeeArr[0].location.country);
+				console.log(employeeArr[0].email);
+				console.log(employeeArr[0].login.username);
+				console.log(employeeArr[0].login.password);
+				console.log(employeeArr[0].picture.large);
 				this.setState({
 					imageUrl: response.data.results,
 				});
@@ -48,7 +48,12 @@ class Directory extends Component {
 			margin: "8px",
 			border: "8px",
 			padding: "8px",
-		};
+        };
+        
+        const navText = {
+            fontSize: "25px",
+            fontFamily: "Georgia, serif",
+        }
 
 		return (
 			<>
@@ -68,9 +73,9 @@ class Directory extends Component {
 
 						<div id="navbarBasicExample" className="navbar-menu">
 							<div className="navbar-start">
-								<a className="navbar-item">Search</a>
+								<a className="navbar-item" href="/" style={navText}>Search</a>
 
-								<a className="navbar-item">Directory</a>
+								<a className="navbar-item" href="/" style={navText}>Directory</a>
 							</div>
 						</div>
 					</nav>
@@ -81,7 +86,7 @@ class Directory extends Component {
 					<div className="columns">
 						<div className="column is-3" style={boxStyle}>
 							<figure class="image is-128x128 is-centered">
-								<img
+								<img alt="bio-pic"
 									className="is-rounded"
 									src="https://bulma.io/images/placeholders/128x128.png"
 								/>
