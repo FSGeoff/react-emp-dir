@@ -29,33 +29,53 @@ class Directory extends Component {
 		this.getEmployee();
 	}
 	render() {
+		const boxStyle = {
+			outline: "solid 1px black",
+			fontSize: "18px",
+			fontFamily: "sans-serif",
+			backgroundColor: "#AED1EF",
+			padding: "10px",
+			border: "5px",
+			margin: "auto",
+		};
 
-        const boxStyle = {
-            outline: "solid 1px black",
-            fontSize: "18px",
-            fontFamily: "sans-serif",
-            backgroundColor: "#AED1EF",
-            padding: "10px",
-            border: "5px",
-            margin: "auto"
-        }
-		
 		return (
-			<div className="columns">
-				<div
-					className="column is-3"
-					style={boxStyle}
+			<>
+				<nav
+					className="navbar is-black"
+					role="navigation"
+					aria-label="main navigation"
 				>
-					<h1 style={{textAlign:"center"}}>EMPLOYEE DATA</h1>
-					<p1>Name:</p1>
-					<br />
-					<p1>Location:</p1>
-					<br />
-					<p1>Email:</p1>
-					<br />
-					<p1>Username:</p1>
+					<div className="navbar-brand">
+						<img
+                            src="https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-employee-icon-design-template-vector-isolated-png-image_856368.jpg"
+                            style={{height:"125px", width:"125px"}}
+							alt="employee icon"
+						/>
+					</div>
+
+					<div id="navbarBasicExample" className="navbar-menu">
+						<div className="navbar-start">
+							<a className="navbar-item">Search</a>
+
+							<a className="navbar-item">Directory</a>
+						</div>
+					</div>
+				</nav>
+
+				<div className="columns">
+					<div className="column is-3" style={boxStyle}>
+						<h1 style={{ textAlign: "center" }}>EMPLOYEE DATA</h1>
+						<p1>Name:</p1>
+						<br />
+						<p1>Location:</p1>
+						<br />
+						<p1>Email:</p1>
+						<br />
+						<p1>Username:</p1>
+					</div>
 				</div>
-			</div>
+			</>
 		);
 	}
 }
