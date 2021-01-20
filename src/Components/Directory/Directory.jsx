@@ -6,7 +6,16 @@ class Directory extends Component {
 		axios
 			.get("https://randomuser.me/api/")
 			.then((response) => {
-				console.log(response.data.results);
+				const empArr = response.data.results;
+				
+				console.log(empArr[0].gender);
+				console.log(empArr[0].name.title);
+				console.log(empArr[0].name.first);
+				console.log(empArr[0].name.last);
+				console.log(empArr[0].location.country);
+				console.log(empArr[0].email);
+                console.log(empArr[0].login.username);
+                console.log(empArr[0].login.password);
 				this.setState({
 					imageUrl: response.data.results,
 				});
