@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class Directory extends Component {
+	state = {
+		bioPic: "",
+		name: "",
+		email: "",
+		location: "",
+		username: "",
+	};
 
-state = {
-    bioPic: "",
-    name: "",
-    email: "",
-    location: "",
-    username: ""
-}
-
-componentWillMount() {
-    this.getEmployee();
-}
+	componentWillMount() {
+		this.getEmployee();
+	}
 
 	getEmployee = () => {
 		axios
@@ -31,17 +30,17 @@ componentWillMount() {
 				console.log(employeeArr[0].login.password);
 				console.log(employeeArr[0].picture.thumbnail);
 				this.setState({
-                    bioPic: employeeArr[0].picture.thumbnail,
-                    name:
+					bioPic: employeeArr[0].picture.thumbnail,
+					name:
 						" " +
 						employeeArr[0].name.title +
 						" " +
 						employeeArr[0].name.first +
 						" " +
-                        employeeArr[0].name.last,
-                        email: employeeArr[0].email,
-                        location: employeeArr[0].location.country,
-                        username: employeeArr[0].login.username
+						employeeArr[0].name.last,
+					email: employeeArr[0].email,
+					location: employeeArr[0].location.country,
+					username: employeeArr[0].login.username,
 				});
 			})
 			.catch((err) => {
@@ -108,33 +107,62 @@ componentWillMount() {
 				<header>
 					<h1 style={headerStyle}>EMPLOYEE DIRECTORY</h1>
 				</header>
-                <div className="is-12" style={{ height: "30px" }}></div>
-            <div className="columns">
-                <div className="column is-3" style={{border: "solid 1px black"}}>
-                <div className="card">
-  <div className="card-image">
-   
-  </div>
-  <div className="card-content">
-    <div className="media">
-      <div className="media-left">
-        <figure className="image is-48x48">
-          <img src={this.state.bioPic} alt="bio pic"/>
-        </figure>
-      </div>
-      <div className="media-content">
-        <p className="title is-4">{this.state.name}</p>
-        <p className="subtitle is-6">{this.state.email}</p>
-        <p>{this.state.location}</p>
-        <p>{this.state.username}</p>
-      </div>
-    </div>
-
-   
-  </div>
-</div>
-                </div>
-            </div>
+				<div className="is-12" style={{ height: "30px" }}></div>
+				<div className="columns">
+					<div
+						className="column is-3"
+						style={{ border: "solid 1px black" }}
+					>
+						<div className="card">
+							<div className="card-image"></div>
+							<div className="card-content">
+								<div className="media">
+									<div className="media-left">
+										<figure className="image is-48x48">
+											<img
+												src={this.state.bioPic}
+												alt="bio pic"
+											/>
+										</figure>
+									</div>
+									<div className="media-content">
+										<p className="title is-4">
+											{this.state.name}
+										</p>
+										<p
+											className="subtitle is-6"
+											style={{ fontSize: "10px" }}
+										>
+											{this.state.email}
+										</p>
+										<p style={{ fontSize: "10px" }}>
+											<span
+												style={{
+													fontWeight: "bolder",
+													fontSize: "10px",
+												}}
+											>
+												Country:{" "}
+											</span>
+											{this.state.location}
+										</p>
+										<p style={{ fontSize: "10px" }}>
+											<span
+												style={{
+													fontWeight: "bolder",
+													ontSize: "10px",
+												}}
+											>
+												Username:{" "}
+											</span>
+											{this.state.username}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</>
 		);
 	}
