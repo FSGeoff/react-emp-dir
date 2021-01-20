@@ -16,6 +16,7 @@ class Directory extends Component {
 				console.log(empArr[0].email);
 				console.log(empArr[0].login.username);
 				console.log(empArr[0].login.password);
+				console.log(empArr[0].picture.medium);
 				this.setState({
 					imageUrl: response.data.results,
 				});
@@ -38,6 +39,16 @@ class Directory extends Component {
 			border: "5px",
 			margin: "auto",
 		};
+		const headerStyle = {
+			fontSize: "40px",
+			fontFamily: "Georgia, serif",
+			fontColor: "#295679",
+			textAlign: "center",
+			fontWeight: "bolder",
+			margin: "8px",
+			border: "8px",
+			padding: "8px",
+		};
 
 		return (
 			<>
@@ -48,8 +59,8 @@ class Directory extends Component {
 				>
 					<div className="navbar-brand">
 						<img
-                            src="https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-employee-icon-design-template-vector-isolated-png-image_856368.jpg"
-                            style={{height:"125px", width:"125px"}}
+							src="https://png.pngtree.com/png-vector/20190316/ourlarge/pngtree-employee-icon-design-template-vector-isolated-png-image_856368.jpg"
+							style={{ height: "125px", width: "125px" }}
 							alt="employee icon"
 						/>
 					</div>
@@ -62,10 +73,18 @@ class Directory extends Component {
 						</div>
 					</div>
 				</nav>
+				<header>
+					<h1 style={headerStyle}>EMPLOYEE DIRECTORY</h1>
+				</header>
 
 				<div className="columns">
 					<div className="column is-3" style={boxStyle}>
-						<h1 style={{ textAlign: "center" }}>EMPLOYEE DATA</h1>
+						<figure class="image is-128x128 is-centered">
+							<img
+								className="is-rounded"
+								src="https://bulma.io/images/placeholders/128x128.png"
+							/>
+						</figure>
 						<p1>Name:</p1>
 						<br />
 						<p1>Location:</p1>
