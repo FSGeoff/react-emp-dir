@@ -7,15 +7,15 @@ class Directory extends Component {
 			.get("https://randomuser.me/api/")
 			.then((response) => {
 				const empArr = response.data.results;
-				
+
 				console.log(empArr[0].gender);
 				console.log(empArr[0].name.title);
 				console.log(empArr[0].name.first);
 				console.log(empArr[0].name.last);
 				console.log(empArr[0].location.country);
 				console.log(empArr[0].email);
-                console.log(empArr[0].login.username);
-                console.log(empArr[0].login.password);
+				console.log(empArr[0].login.username);
+				console.log(empArr[0].login.password);
 				this.setState({
 					imageUrl: response.data.results,
 				});
@@ -29,7 +29,34 @@ class Directory extends Component {
 		this.getEmployee();
 	}
 	render() {
-		return <h1>Directory Page</h1>;
+
+        const boxStyle = {
+            outline: "solid 1px black",
+            fontSize: "18px",
+            fontFamily: "sans-serif",
+            backgroundColor: "#AED1EF",
+            padding: "10px",
+            border: "5px",
+            margin: "auto"
+        }
+		
+		return (
+			<div className="columns">
+				<div
+					className="column is-3"
+					style={boxStyle}
+				>
+					<h1 style={{textAlign:"center"}}>EMPLOYEE DATA</h1>
+					<p1>Name:</p1>
+					<br />
+					<p1>Location:</p1>
+					<br />
+					<p1>Email:</p1>
+					<br />
+					<p1>Username:</p1>
+				</div>
+			</div>
+		);
 	}
 }
 
