@@ -55,6 +55,20 @@ class Home extends Component {
 			marginRight: "auto",
 			width: "50%",
 		};
+		const navText = {
+			fontSize: "25px",
+			fontFamily: "Georgia, serif",
+        };
+        const headerStyle = {
+			fontSize: "40px",
+			fontFamily: "Georgia, serif",
+			fontColor: "#EBF2F8",
+			textAlign: "center",
+			fontWeight: "bolder",
+			margin: "8px",
+			border: "8px",
+			padding: "8px",
+        };
 		return (
 			<>
 				<nav
@@ -72,17 +86,20 @@ class Home extends Component {
 
 					<div id="navbarBasicExample" className="navbar-menu">
 						<div className="navbar-start">
-							<a className="navbar-item" href="/">
+							<a className="navbar-item" href="/" style={navText}>
 								Search
 							</a>
 
-							<a className="navbar-item" href="/">
+							<a className="navbar-item" href="/" style={navText}>
 								Directory
 							</a>
 						</div>
 					</div>
 				</nav>
 				<div className="is-12" style={{ height: "30px" }}></div>
+                <header>
+						<h1 style={headerStyle}>EMPLOYEE DIRECTORY</h1>
+					</header>
 				<div className="columns">
 					<div className="column is-three-fifths is-offset-one-fifth">
 						<img
@@ -91,14 +108,15 @@ class Home extends Component {
 							className="is-rounded"
 							src={this.state.bioPic}
 						/>
-
-						<p1>Name: {this.state.name}</p1>
-						<br />
-						<p1>Location: {this.state.location}</p1>
-						<br />
-						<p1>Email: {this.state.email}:</p1>
-						<br />
-						<p1>Username: {this.state.username}</p1>
+						<div style={{textAlign: "center"}}>
+							<p1><span style={{fontWeight: "bolder"}}>Name:</span> {this.state.name}</p1>
+							<br />
+							<p1><span style={{fontWeight: "bolder"}}>Location:</span> {this.state.location}</p1>
+							<br />
+							<p1><span style={{fontWeight: "bolder"}}>Email:</span> {this.state.email}:</p1>
+							<br />
+							<p1><span style={{fontWeight: "bolder"}}>Username:</span> {this.state.username}</p1>
+						</div>
 					</div>
 				</div>
 			</>
